@@ -16,7 +16,27 @@ function loadStudentsObject() {
             "nilai": 90
         }
     }
-    console.log('students ', students_object);
+
+    // create DOM to show object
+    
+    const studentsSection = document.getElementById("students");
+
+    const studentTitle = document.createElement("h1");
+    studentTitle.innerText = "List Students :"
+    studentsSection.appendChild(studentTitle);
+
+    /* loop object and write to DOM */
+    for (const studentId in students_object) {
+        const student = students_object[studentId];
+        const studentDiv = document.createElement("div");
+        studentDiv.innerHTML = `
+            <h3>Name: ${student.name}</h3>
+            <p>Role: ${student.role}</p>
+            <p>Nilai: ${student.nilai}</p>
+        `;
+        studentsSection.appendChild(studentDiv);
+    }
+    
 }
 
 /* grouping / array object */
