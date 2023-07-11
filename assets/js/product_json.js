@@ -14,8 +14,10 @@ function loadJsonProducts() {
         products_title.innerText = 'List Products : ';
         products_section.appendChild(products_title);
 
+      
+      const count = Object.keys(data).length; /* hitung panjang data json */
+
       // loop variabel data
-      const count = Object.keys(data).length;
       for (let index = 1; index <= count; index++) {
         const product = data[index];
 

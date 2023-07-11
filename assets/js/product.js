@@ -1,4 +1,5 @@
 function loadProductData() {
+
     data_products = {
         1 : {
             'name': 'Type Studio',
@@ -20,7 +21,7 @@ function loadProductData() {
         },
     }
 
-    // create DOM to show object
+    // create DOM to show object (Document Object Model)
     
     const products_section = document.getElementById('products');
 
@@ -33,15 +34,13 @@ function loadProductData() {
         const product = data_products[product_id];
         const product_div = document.createElement('div');
         product_div.innerHTML = `
-            <card>
             <h3>Name: ${product.name}</h3>
             <p>Type: ${product.type}</p>
             <img src='${product.image}' />
             <h4 class='price'>Harga: ${product.price}</h4>
-            </card>
         `;
         products_section.appendChild(product_div);
     }
 
-    console.log(data_products)
+    console.log('data product', data_products)
 }

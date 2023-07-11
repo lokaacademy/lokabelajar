@@ -1,0 +1,21 @@
+/* {key: value : JS = property => value} */
+data_products = {
+    1 : {
+        'name': 'Type Studio',
+        'type': 'Studio',
+        'price': 'IDR 300 Juta',
+        'image': '/backend/assets/images/studio.jpeg',
+    },
+    2 : {
+        'name': '2 Bedroom',
+        'type': 'Two Bed',
+        'price': 'IDR 500 Juta',
+        'image': '/backend/assets/images/apartemen-studio.jpeg',
+    },
+    3 : {
+        'name': '3 Bedroom',
+        'type': 'Family',
+        'price': 'IDR 700 Juta',
+        'image': '/backend/assets/images/apartment-studio-modern.jpeg',
+    },
+}
