@@ -1,12 +1,13 @@
 function loadJsonProducts() {
   /* set variable json file */
-  let json_file = "/backend/data/products.json"
-  try {
+  const json_file = "/backend/data/products.json"
+
     /* get json file */
+
     fetch(json_file)
     .then(response => response.json())
     .then(data => {
-        
+        console.log('response= ', data)
         /* create DOM title */
         const products_section = document.getElementById('products');
 
@@ -14,28 +15,28 @@ function loadJsonProducts() {
         products_title.innerText = 'List Products : ';
         products_section.appendChild(products_title);
 
+      /* hitung panjang data json */
       
-      const count = Object.keys(data).length; /* hitung panjang data json */
+      const count = Object.keys(data).length;
+      console.log('length object=', count)
 
       // loop variabel data
       for (let index = 1; index <= count; index++) {
         const product = data[index];
 
-        /* create DOM product data */
+        
         const product_div = document.createElement('div');
         product_div.classList.add('product_list');
         product_div.innerHTML = `
-            <card>
             <h3>Name: ${product.name}</h3>
             <p>Type: ${product.type}</p>
             <img src='${product.image}' />
             <h4 class='price'>Price: ${product.price}</h4>
             <button class="details-button" data-product-id="${index}">Details</button>
-            </card>
         `;
         products_section.appendChild(product_div);
         
-      }
+      } 
 
         // Open modal with corresponding data when the details button is clicked
         const details_button = document.querySelectorAll('.details-button');
@@ -45,11 +46,8 @@ function loadJsonProducts() {
             const product_data = data[product_id];
             openModal(product_data);
         });
-        });
+        }); 
     })  
-  } catch (error) {
-      console.log('error ', error)
-  }
   
     
 }
