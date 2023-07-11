@@ -1,0 +1,30 @@
+#products {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(0, min(50%/3)));
+    max-height: 50px;
+}
+
+.price {
+   color:brown;
+}
+
+.product card {
+    margin-left: 10px;
+}
+
+@media (max-width: 1024px) {
+    /* Styles for tablets */
+    #products {
+        grid-gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(0, min(100%, 3fr)));
+    }
+}
+
+@media (max-width: 768px) {
+    /* Styles for mobile phones */
+    #products {
+        grid-gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(0, min(100%, 3fr)));
+    }
+}
