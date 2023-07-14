@@ -1,3 +1,4 @@
+// install nodemailer first - npm install nodemailer
 const nodemailer = require('nodemailer');
 
 const transporter = nodemailer.createTransport({
